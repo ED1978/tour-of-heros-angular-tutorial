@@ -12,7 +12,9 @@ export class HeroService {
   constructor(private messageService: MessageService) { }
 
   getHeroes(): Observable<Hero[]> {
-  return of(HEROES);
+    // Todo: send message_after_fetching_heroes
+    this.messageService.add('HeroService: fetched heroes')
+    return of(HEROES);
 }
 
 }
